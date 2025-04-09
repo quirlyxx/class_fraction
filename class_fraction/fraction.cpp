@@ -1,6 +1,5 @@
 #include "fraction.h"
 #include <iostream>
-
 using namespace std;
 
 int Fraction::reduct(int a, int b) {
@@ -11,6 +10,9 @@ int Fraction::reduct(int a, int b) {
     }
     return a;
 }
+
+Fraction::Fraction() : numerator(0), denominator(1) {}
+Fraction::Fraction(int num, int den) : numerator(num), denominator(den == 0 ? 1 : den) {}
 
 void Fraction::input() {
     cout << "Enter numerator: ";
@@ -28,34 +30,26 @@ void Fraction::output() {
     cout << numerator / divisor << "/" << denominator / divisor << endl;
 }
 
-Fraction Fraction::add(Fraction other) {
-    Fraction result;
-
-    result.numerator = numerator * other.denominator + other.numerator * denominator;
-    result.denominator = denominator * other.denominator;
-    return result;
+inline Fraction Fraction::add(Fraction other) {
+    int num = numerator * other.denominator + other.numerator * denominator;
+    int den = denominator * other.denominator;
+    return Fraction(num, den);
 }
 
-Fraction Fraction::subtract(Fraction other) {
-    Fraction result;
-
-    result.numerator = numerator * other.denominator - other.numerator * denominator;
-    result.denominator = denominator * other.denominator;
-    return result;
+inline Fraction Fraction::subtract(Fraction other) {
+    int num = numerator * other.denominator - other.numerator * denominator;
+    int den = denominator * other.denominator;
+    return Fraction(num, den);
 }
 
-Fraction Fraction::multiply(Fraction other) {
-    Fraction result;
-
-    result.numerator = numerator * other.numerator;
-    result.denominator = denominator * other.denominator;
-    return result;
+inline Fraction Fraction::multiply(Fraction other) {
+    int num = numerator * other.numerator;
+    int den = denominator * other.denominator;
+    return Fraction(num, den);
 }
 
-Fraction Fraction::divide(Fraction other) {
-    Fraction result;
-
-    result.numerator = numerator * other.denominator;
-    result.denominator = denominator * other.numerator;
-    return result;
+inline Fraction Fraction::divide(Fraction other) {
+    int num = numerator * other.denominator;
+    int den = denominator * other.numerator;
+    return Fraction(num, den);
 }

@@ -8,13 +8,20 @@ private:
     int reduct(int a, int b);
 
 public:
+    Fraction();
+    Fraction(int num, int den);
+
     void input();
     void output();
 
-    Fraction add(Fraction other);
-    Fraction subtract(Fraction other);
-    Fraction multiply(Fraction other);
-    Fraction divide(Fraction other);
+    inline Fraction add(Fraction other);
+    inline Fraction subtract(Fraction other);
+    inline Fraction multiply(Fraction other);
+    inline Fraction divide(Fraction other);
+
+    inline int getNumerator() { return numerator; }
+    inline int getDenominator() { return denominator; }
 };
+
 
 

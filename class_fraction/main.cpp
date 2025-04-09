@@ -4,8 +4,10 @@ using namespace std;
 
 int main() {
     Fraction a, b;
+
     cout << "Enter first fraction:\n";
     a.input();
+
     cout << "Enter second fraction:\n";
     b.input();
 
@@ -19,5 +21,7 @@ int main() {
     a.multiply(b).output();
 
     cout << "Division: ";
-    b.divide(a).output();
+    a.divide(b).output();
+
+    return 0;
 }
