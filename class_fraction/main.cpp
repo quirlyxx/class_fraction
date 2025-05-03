@@ -12,16 +12,16 @@ int main() {
     b.input();
 
     cout << "\nSum: ";
-    a.add(b).output();
+    (a + b).output();
 
-    cout << "Minus: ";
-    a.subtract(b).output();
+    cout << "Difference: ";
+    (a - b).output();
 
-    cout << "Multiplicate: ";
-    a.multiply(b).output();
+    cout << "Product: ";
+    (a * b).output();
 
-    cout << "Division: ";
-    a.divide(b).output();
+    cout << "Quotient: ";
+    (a / b).output();
 
     return 0;
 }

@@ -14,10 +14,10 @@ public:
     void input();
     void output();
 
-    inline Fraction add(Fraction other);
-    inline Fraction subtract(Fraction other);
-    inline Fraction multiply(Fraction other);
-    inline Fraction divide(Fraction other);
+    Fraction operator+(const Fraction& other) const;
+    Fraction operator-(const Fraction& other) const;
+    Fraction operator*(const Fraction& other) const;
+    Fraction operator/(const Fraction& other) const;
 
     inline int getNumerator() { return numerator; }
     inline int getDenominator() { return denominator; }

@@ -29,26 +29,25 @@ void Fraction::output() {
     int divisor = reduct(numerator, denominator);
     cout << numerator / divisor << "/" << denominator / divisor << endl;
 }
-
-inline Fraction Fraction::add(Fraction other) {
+Fraction Fraction::operator+(const Fraction& other) const {
     int num = numerator * other.denominator + other.numerator * denominator;
     int den = denominator * other.denominator;
     return Fraction(num, den);
 }
 
-inline Fraction Fraction::subtract(Fraction other) {
+Fraction Fraction::operator-(const Fraction& other) const {
     int num = numerator * other.denominator - other.numerator * denominator;
     int den = denominator * other.denominator;
     return Fraction(num, den);
 }
 
-inline Fraction Fraction::multiply(Fraction other) {
+Fraction Fraction::operator*(const Fraction& other) const {
     int num = numerator * other.numerator;
     int den = denominator * other.denominator;
     return Fraction(num, den);
 }
 
-inline Fraction Fraction::divide(Fraction other) {
+Fraction Fraction::operator/(const Fraction& other) const {
     int num = numerator * other.denominator;
     int den = denominator * other.numerator;
     return Fraction(num, den);
